@@ -1,2 +1,0 @@
-# CNYT
-# readme.txt
