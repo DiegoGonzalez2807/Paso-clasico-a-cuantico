@@ -48,7 +48,7 @@ testcartesianos = Esta prueba tiene como finalidad testear la funcion que pasa d
 
 ## Construido con :
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
+
 
 * [Python](https://www.python.org/) - Lenguaje de programacion
 
