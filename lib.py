@@ -191,6 +191,28 @@ def revisionhermitiana(a):
     else:
         print("Matriz no es hermitiana")
     return b
+def tensor(a,b):
+    arreglo = []
+    posi = 0
+    posj = 0
+    while posi < (len(a)-1)*2:
+        fila1 = a[posi]
+        fila2 = b[posj]
+        fila3 = []
+        for i in fila1:
+            for j in fila2:
+                fila3 = fila3 + [multi(i,j)]
+        posj = posj + 1
+        fila2 = b[posj]
+        arreglo.append(fila3)
+        fila = []
+        for i in fila1:
+            for j in fila2:
+                fila.append(multi(i,j))
+        posi = posi + 1
+        posj = posj - 1
+        arreglo.append(fila)
+    return arreglo
 def prettyprinting(a):
     print(a[0], "+", a[1], "i")
 def main():
