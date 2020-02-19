@@ -12,9 +12,9 @@ def resta(c,d):
     rest2 = round(rest2, 2)
     return (rest1,rest2) 
 def multi(c,d):
-    multi1 =  c[0] * d[0] - c[1] * d[1]
+    multi1 =  (c[0] * d[0] )- (c[1] * d[1])
     multi1 = round(multi1, 2)
-    multi2 = c[0] * d[1] + c[1] * d[0]
+    multi2 = (c[0] * d[1]) + (c[1] * d[0])
     multi2 = round(multi2, 2)
     return (multi1,multi2)
 def division(c,d):
@@ -36,31 +36,33 @@ def modulos(c):
 def cartesiapolar(c):
     p = math.sqrt(c[0]**2 + c[1]**2)
     p = round(p, 2)
-    tetha = math.atan(c[1]/c[0])
+    tetha = math.atan2(c[0],c[1])
     tetha = round(tetha, 2)
     return (p,tetha)
 def retorno(c):
-    tetha = math.atan(c[1]/c[0])
+    tetha = math.atan2(c[1],c[0])
     tetha = round(tetha, 2)
     return (tetha,0)
-    
-def sumamatriz(a,b):
+def sumavector(a,b):
     matriz =[]
-    for i in range (2):
+    m = len(a)
+    for i in range (m):
         sum1 = suma(a[i],b[i])
         matriz = matriz + [sum1]
     print(matriz)
+    return matriz
 def inversa(c):
     matriz = []
     a = (-1,0)
-    for i in range(2):
+    for i in range(len(c)):
         mult1 = multi(c[i],a)
         matriz = matriz + [mult1]
     print(matriz)
+    return matriz
 def multiescalar(a,d):
     matriz = []
     i = 0
-    for i in range(2):
+    for i in range(len(a)):
         matriz = matriz + [multi(a[i],d)]
     print(matriz)
     return matriz
@@ -127,7 +129,7 @@ def accionmatvector(a,b):
                 Sum1 = suma(matinicial,resultado)
             arreglo = arreglo + [Sum1]
             Sum1 = (0,0)
-    return c
+    return arreglo
 
 def multimatriz(a,b):
     n,m = len(a),len(a[0])
@@ -136,7 +138,7 @@ def multimatriz(a,b):
     matriz = []
     acumulador = []
     cont = 0
-    c = [[0 for j in range(m)]for i in range(n)]
+    c = [[(0,0) for j in range(m)]for i in range(n)]
     if m == d:
         for k in range(f):
             for i in range(n):
@@ -149,26 +151,25 @@ def multimatriz(a,b):
                         acumulador = acumulador + [suma(matriz[cont],matriz[cont+1])]
                         cont = cont + 2
         print(matriz)
-        return acumulador
+    return matriz
 def interno(a,b):
+    vector = (0,0)
     m,n = len(a),len(b)
     for i in range(m):
-        for j in range(n):
-            resp = a[0] * b[0] + a[1] * b[1]
-            resp = round(resp,2)
-    print(resp)
-    return resp
+        resp1 = conjugado(a[i])
+        respuesta2 = multi(resp1,b[i])
+        respuesta = suma(vector,respuesta2)
+    print(respuesta)
+    return respuesta
 def potencia(a):
     for i in range(len(a)):
         c = multi(a,a)
     return c
 def norma(a):
-    b = potencia(a)
-    c = sum(a)
-    d = math.sqrt(c)
-    d = round(d,2)
-    print(d)
-    return b
+    e = interno(a,a)
+    c = (e[0]) ** (1/2)
+    c = round(c,2)
+    return c
 def distancia(a,b):
     c = resta(a,b)
     d = interno(c,c)
@@ -216,13 +217,13 @@ def tensor(a,b):
 def prettyprinting(a):
     print(a[0], "+", a[1], "i")
 def main():
-    m = [(1,0),(2,3)]
-    n = [(3,4),(4,6)]
-    bb =  [(1,0),(2,3)], [(3,4),(4,6)],
-    cc = [(2,1),(3,5)], [(3,7),(4,8)],
-    b = (3,0)
-    a = (3.7,8.5)
-    aa = (2,0)
+    m = [(1,5),(7,2)]
+    n = [(1,6),(5,7)]
+    bb =  [(5,2),(3,8)], [(1,5),(7,7)],
+    cc = [(1,9),(2,2)], [(3,1),(9,2)],
+    b = (5,2)
+    a = (5.9,2.3)
+    aa = (5,0)
     c = suma(a,b)
     e = resta(a,b)
     f = multi(a,b)
@@ -239,8 +240,8 @@ def main():
     prettyprinting(i)
     prettyprinting(j)
     prettyprinting(k)
-    l = sumamatriz(n,m)
     am = inversa(m)
+    l = sumavector(n,m)
     gt = multiescalar(m,aa)
     hi = sumaMatriz(bb,cc)
     hj = inversaMatriz(bb)
@@ -249,11 +250,12 @@ def main():
     ad = conjumatrices(bb)
     ah = adjunmatrices(bb)
     ai = multimatriz(bb,cc)
-    aj = potencia(a)
-    ak = norma(a)
-    al = interno(a,b)
-    am = distancia(a,b)
+    ap = accionmatvector(bb, m)
+    print(ap)
+    al = interno(m, n)
+    ak = norma(m)
+    print(ak)
+    am = distancia(m,n0)
     an = revisionunitaria(bb)
     ao = revisionhermitiana(bb)
-    ap = accionmatvector(bb,a)
 main()
