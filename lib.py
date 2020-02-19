@@ -49,15 +49,13 @@ def sumavector(a,b):
     for i in range (m):
         sum1 = suma(a[i],b[i])
         matriz = matriz + [sum1]
-    print(matriz)
     return matriz
 def inversa(c):
     matriz = []
     a = (-1,0)
     for i in range(len(c)):
         mult1 = multi(c[i],a)
-        matriz = matriz + [mult1]
-    print(matriz)
+    matriz = matriz + [mult1]
     return matriz
 def multiescalar(a,d):
     matriz = []
@@ -102,7 +100,6 @@ def transpuesta(y):
     for i in range(n):
         for j in range(m):
             c[i][j] = y[j][i]
-    print(c)
     return c
 def conjumatrices(z):
     n,m = len(z),len(z[0])
@@ -112,7 +109,6 @@ def conjumatrices(z):
     for i in range(n):
         for j in range(m):
             c[i][j] = conjugado(z[i][j])
-    print(c)
     return c
 def adjunmatrices(a):
     c = transpuesta(conjumatrices(a))
@@ -150,7 +146,6 @@ def multimatriz(a,b):
                     while cont <= len(matriz)-1:
                         acumulador = acumulador + [suma(matriz[cont],matriz[cont+1])]
                         cont = cont + 2
-        print(matriz)
     return matriz
 def interno(a,b):
     vector = (0,0)
@@ -159,7 +154,6 @@ def interno(a,b):
         resp1 = conjugado(a[i])
         respuesta2 = multi(resp1,b[i])
         respuesta = suma(vector,respuesta2)
-    print(respuesta)
     return respuesta
 def potencia(a):
     for i in range(len(a)):
@@ -170,28 +164,36 @@ def norma(a):
     c = (e[0]) ** (1/2)
     c = round(c,2)
     return c
-def distancia(a,b):
-    c = resta(a,b)
-    d = interno(c,c)
-    e = math.sqrt(d)
-    e = round(e,2)
-    print(e)
-    return c
+def distancia(d,e):
+    b = inversa(e)
+    c = sumavector(d,e)
+    h = interno(c,c)
+    respuesta = (h[0] ** (1/2))
+    respuesta = round(respuesta,2)
+    return respuesta
 def revisionunitaria(a):
+    respuesta = False
     b = adjunmatrices(a)
     c = multimatriz(a,b)
     if a == c:
-        print("La matriz es unitaria")
+        respuesta = True
+        print(respuesta)
+        return respuesta
     else:
-        print("La matriz no es unitaria")
-    return b
+        respuesta = False
+        print(respuesta)
+        return respuesta
 def revisionhermitiana(a):
+    respuesta = False
     b = adjunmatrices(a)
     if b == a:
-        print("Matriz es hermitiana")
+        respuesta = True
+        print(respuesta)
+        return respuesta
     else:
-        print("Matriz no es hermitiana")
-    return b
+        respuesta = False
+        print(respuesta)
+        return respuesta
 def tensor(a,b):
     arreglo = []
     posi = 0
@@ -217,45 +219,53 @@ def tensor(a,b):
 def prettyprinting(a):
     print(a[0], "+", a[1], "i")
 def main():
-    m = [(1,5),(7,2)]
-    n = [(1,6),(5,7)]
-    bb =  [(5,2),(3,8)], [(1,5),(7,7)],
-    cc = [(1,9),(2,2)], [(3,1),(9,2)],
-    b = (5,2)
-    a = (5.9,2.3)
-    aa = (5,0)
-    c = suma(a,b)
-    e = resta(a,b)
-    f = multi(a,b)
-    g = division(a,b)
-    h = conjugado(a)
-    i = modulos(a)
-    j = cartesiapolar(a)
-    k = retorno(a)
-    prettyprinting(c)
-    prettyprinting(e)
-    prettyprinting(f)
-    prettyprinting(g)
-    prettyprinting(h)
-    prettyprinting(i)
-    prettyprinting(j)
-    prettyprinting(k)
-    am = inversa(m)
-    l = sumavector(n,m)
-    gt = multiescalar(m,aa)
-    hi = sumaMatriz(bb,cc)
-    hj = inversaMatriz(bb)
-    hk = escalarmatrices(bb,aa)
-    ac = transpuesta(bb)
-    ad = conjumatrices(bb)
-    ah = adjunmatrices(bb)
-    ai = multimatriz(bb,cc)
-    ap = accionmatvector(bb, m)
-    print(ap)
-    al = interno(m, n)
-    ak = norma(m)
-    print(ak)
-    am = distancia(m,n0)
-    an = revisionunitaria(bb)
-    ao = revisionhermitiana(bb)
+    vector1 = [(1,5),(7,2)]
+    vector2 = [(1,6),(5,7)]
+    matriz1 =  [(5,2),(3,8)], [(1,5),(7,7)],
+    matriz2 = [(1,9),(2,2)], [(3,1),(9,2)],
+    num1 = (5,2)
+    num2 = (5.9,2.3)
+    num3 = (5,0)
+    sumar = suma(num2,num1)
+    restar = resta(num2,num1)
+    multiplicacion = multi(num2,num1)
+    dividir = division(num2,num1)
+    conjugar = conjugado(num2)
+    modulo = modulos(num2)
+    cambiocoordenadas = cartesiapolar(num2)
+    retornar = retorno(num2)
+    prettyprinting(sumar)
+    prettyprinting(restar )
+    prettyprinting(multiplicacion)
+    prettyprinting(dividir)
+    prettyprinting(conjugar)
+    prettyprinting(modulo)
+    prettyprinting(cambiocoordenadas)
+    prettyprinting(retornar)
+    sumar1 = sumavector(vector2,vector1)
+    print(sumar1)
+    multi2 = multiescalar(vector1,num3)
+    sumar2 = sumaMatriz(matriz1,matriz2)
+    invertir1 = inversaMatriz(matriz1)
+    escalar1 = escalarmatrices(matriz1,num3)
+    transponer1 = transpuesta(matriz1)
+    print(transponer1)
+    conjugar1 = conjumatrices(matriz1)
+    print(conjugar1)
+    adjuntar1 = adjunmatrices(matriz1)
+    print(adjuntar1)
+    multiplicar1 = multimatriz(matriz1,matriz2)
+    print(multiplicar1)
+    accion1 = accionmatvector(matriz1, vector1)
+    print(accion1)
+    prodpunto1 = interno(vector1, vector2)
+    print(prodpunto1)
+    norma1 = norma(vector1)
+    print(norma1)
+    distancia1 = distancia(vector1,vector2)
+    print(distancia1)
+    unitaria1= revisionunitaria(matriz1)
+    hermitiana1 = revisionhermitiana(matriz1)
+    productotensor1 = tensor(matriz1,matriz2)
+    print(productotensor1)
 main()
