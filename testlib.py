@@ -94,3 +94,31 @@ class TestStringMethods(unittest.TestCase):
     def testnorma(self):
         a = [(1,5),(7,2)]
         self.assertEqual(norma(a), 7.28)
+        def testdistancia(self):
+        a = [(1,5),(7,2)]
+        b = [(1,6),(5,7)]
+        self.assertEqual(distancia(a, b), 15.0)
+        
+    def testdistancia(self):
+        a = [(1,5),(7,2)]
+        b = [(1,6),(5,7)]
+        self.assertEqual(distancia(a, b), 15.0)
+
+    def testunitaria(self):
+        a = [(5,2),(3,8)], [(1,5),(7,7)]
+        self.assertEqual(revisionunitaria(a), False)
+
+    def testhermitiana(self):
+        a = [(5,2),(3,8)], [(1,5),(7,7)]
+        self.assertEqual(revisionhermitiana(a), False)
+        
+    def testtensor(self):
+        a = [(5,2),(3,8)], [(1,5),(7,7)]
+        b = [(1,9),(2,2)], [(3,1),(9,2)]
+        self.assertEqual(tensor(a, b), [[(-13, 47), (6, 14), (-69, 35), (-10, 22)], [(13, 11), (41, 28), (1, 27), (11, 78)], [(-44, 14), (-8, 12), (-56, 70), (0, 28)], [(-2, 16), (-1, 47), (14, 28), (49, 77)]])
+
+
+
+if __name__ == '__main__':
+    unittest.main()
+      
