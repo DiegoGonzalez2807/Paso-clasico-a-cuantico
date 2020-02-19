@@ -1,38 +1,96 @@
 import unittest
 from lib import *
 
+
 class TestStringMethods(unittest.TestCase):
 
     def testsuma(self):
-        a = (2,3)
-        b = (3,1)
-        self.assertEqual(suma (a,b), (5,4))
+        a = (2, 3)
+        b = (3, 1)
+        self.assertEqual(suma(a, b), (5, 4))
+
     def testresta(self):
-        c = (2,3)
-        d = (3,1)
-        self.assertEqual(resta (c,d), (-1,2))
+        a = (2, 3)
+        b = (3, 1)
+        self.assertEqual(resta(a, b), (-1, 2))
+
     def testmulti(self):
-        e = (2,3)
-        f = (3,1)
-        self.assertEqual(multi (e,f), (3,11))
+        a = (2, 3)
+        b = (3, 1)
+        self.assertEqual(multi(a, b), (3, 11))
+
     def testdivisi(self):
-        g = (2,3)
-        h = (3,1)
-        self.assertEqual(division (g,h), (0.9,0.7))
+        a = (2, 3)
+        b = (3, 1)
+        self.assertEqual(division(a, b), (0.9, 0.7))
+
     def testconjugado(self):
-        i = (2,3)
-        self.assertEqual(conjugado (i), (2,-3))
+        a = (2, 3)
+        self.assertEqual(conjugado(a), (2, -3))
+
     def testmodulos(self):
-        j = (2,3)
-        self.assertEqual(modulos (j), (3.61,0))
+        a = (2, 3)
+        self.assertEqual(modulos(a), (3.61, 0))
+
     def testcartesianos(self):
-        k = (2,3)
-        self.assertEqual(cartesiapolar (k), (3.61,0.98))
+        a = (2, 3)
+        self.assertEqual(cartesiapolar(a), (3.61, 0.59))
+
     def testretorno(self):
-        l = (2,3)
-        self.assertEqual(retorno (l), (0.98,0))
+        a = (2, 3)
+        self.assertEqual(retorno(a), (0.98, 0))
 
+    def testsumavector(self):
+        a = [(1,6),(5,7)]
+        b = [(1,5),(7,2)]
+        self.assertEqual(sumavector(a, b), [(2, 11), (12, 9)])
 
-        
-if __name__ == '__main__':
-    unittest.main()
+    def testmultiescalar(self):
+        a = [(1,5),(7,2)]
+        b = (5,0)
+        self.assertEqual(multiescalar(a, b), [(5, 25), (35, 10)])
+
+    def testsumamatriz(self):
+        a = [(5,2),(3,8)], [(1,5),(7,7)]
+        b = [(1,9),(2,2)], [(3,1),(9,2)]
+        self.assertEqual(sumaMatriz(a, b), [[(6, 11), (5, 10)], [(4, 6), (16, 9)]])
+
+    def testinversamatriz(self):
+        a = [(5,2),(3,8)], [(1,5),(7,7)]
+        self.assertEqual(inversaMatriz(a), [[(-5, -2), (-3, -8)], [(-1, -5), (-7, -7)]])
+
+    def testescalarmatriz(self):
+        a = [(5,2),(3,8)], [(1,5),(7,7)]
+        b = (5,0)
+        self.assertEqual(escalarmatrices(a, b), [[(25, 10), (15, 40)], [(5, 25), (35, 35)]])
+
+    def testtranspuesta(self):
+        a = [(5,2),(3,8)], [(1,5),(7,7)]
+        self.assertEqual(transpuesta(a), [[(5, 2), (1, 5)], [(3, 8), (7, 7)]])
+
+    def testconjugadomatriz(self):
+        a = [(5,2),(3,8)], [(1,5),(7,7)]
+        self.assertEqual(conjumatrices(a),[[(5, -2), (3, -8)], [(1, -5), (7, -7)]])
+
+    def testadjuntamatriz(self):
+        a =  [(5,2),(3,8)], [(1,5),(7,7)]
+        self.assertEqual(adjunmatrices(a), [[(5, -2), (1, -5)], [(3, -8), (7, -7)]])
+
+    def testmultimatrices(self):
+        a = [(5,2),(3,8)], [(1,5),(7,7)]
+        b = [(1,9),(2,2)], [(3,1),(9,2)]
+        self.assertEqual(multimatriz(a, b), [(-13, 47), (-10, 22), (13, 11), (11, 78), (-44, 14), (0, 28), (-2, 16), (49, 77)])
+
+    def testaccion(self):
+        a = [(5,2),(3,8)], [(1,5),(7,7)]
+        b = [(1,5),(7,2)]
+        self.assertEqual(accionmatvector(a, b), [(5, 62), (35, 63)])
+
+    def testinterno(self):
+        a = [(1,5),(7,2)]
+        b =  [(1,6),(5,7)]
+        self.assertEqual(interno(a, b), (49, 39))
+
+    def testnorma(self):
+        a = [(1,5),(7,2)]
+        self.assertEqual(norma(a), 7.28)
