@@ -54,12 +54,27 @@ testinversamatriz  =  Esta prueba tiene como finalidad testear la funcion que in
 
 testescalarmatriz =  Esta prueba tiene como finalidad testear la funcion que multiplica una matriz definida por tuplas de numeros complejos por un numero escalar cualquiera.
 
-testtranspuesta = 
+testtranspuesta = Esta prueba tiene como finalidad testear la funcion que cambia las filas de una matriz definida por tuplas de numeros complejos por columnas definidas de igual manera.
 
 testconjugadomatriz = Esta prueba tiene como finalidad testear la funcion que invierte los signos de la parte imaginaria de la tuplas de numeros complejos que definen la matriz.
 
+testadjuntamatriz = Esta prueba tiene como finalidad testear la funcion que conjuga la matriz (cambia los valores de la parte imaginaria de las tuplas de la matriz) y la transpone (cambiar las filas de la matriz por columnas y hacer el mismo proceso con las columnas de esta misma).
 
+testmultimatrices = Esta prueba tiene como finalidad testear la funcion que multiplica dos matrices de igual tamaño, las cuales ambas estan definidas por tuplas de numeros imaginarios.
 
+testaccion = Esta prueba tiene como finalidad testear la funcion que multiplica un vector cualquiera por una matriz definida, ambas definidas por tuplas de numeros imaginarios, y obligatoriamente el vector tiene que tener la misma longiutd de sus filas que de la longitud de columnas de la matriz o al contrario, de que la longitud de columnas del vector sea igual a la longitud de filas de la matriz.
+
+testinterno = Esta prueba tiene como finalidad testear el producto interno generado por dos vectores de la misma longitud, ambos definidos por tuplas de numeros imaginarios. Tener en cuenta que al tener un producto interno de numeros complejos, el primer vector se tiene que conjugar.
+
+testnorma = Esta prueba tiene como finalidad hallar la norma o longitud absoluta de un vector, lo cual se hace haciendo el producto interno de el mismo. Este vector esta definido por tuplas de numeros complejos.
+
+testdistancia = Esta prueba tiene como finalidad hallar la distancia total entre dos vectores definidos por tuplas de numeros imaginarios, recordar que estos dos vectores tienen que ser de la misma longitud.
+
+testunitaria = Esta prueba tiene como finalidad decir si una matriz definida por tuplas de numernos complejos es unitaria, eso quiere decir que si la matriz se le hace la funcion adjunta y se le multiplica por la matriz origianl, tiene que dar igual a la matriz original.
+
+testhermitiana = Esta prueba testea si una matriz definida por tuplas de numeros complejos es hermitiana, esto se sabe si esta matriz al hacerle la funcion adjunta, va a ser igual que la matriz original.
+
+testtensor = Esta prueba tiene la finalidad de testear la funcion que multiplica cada elemento de un vector por una matriz completa, ambas definidas por tuplas de numeros complejos.
 
 
 
