@@ -94,7 +94,8 @@ class TestStringMethods(unittest.TestCase):
     def testnorma(self):
         a = [(1,5),(7,2)]
         self.assertEqual(norma(a), 7.28)
-        def testdistancia(self):
+        
+    def testdistancia(self):
         a = [(1,5),(7,2)]
         b = [(1,6),(5,7)]
         self.assertEqual(distancia(a, b), 15.0)
