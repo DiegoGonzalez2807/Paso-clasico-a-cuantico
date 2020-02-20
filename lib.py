@@ -219,13 +219,13 @@ def tensor(a,b):
 def prettyprinting(a):
     print(a[0], "+", a[1], "i")
 def main():
-    vector1 = [(1,5),(7,2)]
-    vector2 = [(1,6),(5,7)]
-    matriz1 =  [(5,2),(3,8)], [(1,5),(7,7)],
-    matriz2 = [(1,9),(2,2)], [(3,1),(9,2)],
-    num1 = (5,2)
-    num2 = (5.9,2.3)
-    num3 = (5,0)
+    vector1 = [(1,0),(2,3)]
+    vector2 = [(3,4),(4,6)]
+    matriz1 =  [(1,0),(2,3)], [(3,4),(4,6)],
+    matriz2 = [(2,1),(3,5)], [(3,7),(4,8)],
+    num1 = (3,0)
+    num2 = (3.7,8.5)
+    num3 = (2,0)
     sumar = suma(num2,num1)
     restar = resta(num2,num1)
     multiplicacion = multi(num2,num1)
