@@ -44,6 +44,24 @@ testmodulos = Esta prueba tiene como finalidad testear la funcion modular en una
 
 testcartesianos = Esta prueba tiene como finalidad testear la funcion que pasa de coordenadas cartesianas a polares una tupla de numeros
 
+testsumavector = Esta prueba tiene como finalidad testear la funcion que suma dos vectores definidos de numeros complejos
+
+testmultiescalar = Esta prueba tiene como finalidad testear la funcion que multipica un vector definido de numeros complejos con un valor escalar cualquiera
+
+testsumamatriz =  Esta prueba tiene como finalidad testear la funcion que suma dos matrices definidas por tuplas de numeros complejos.
+
+testinversamatriz  =  Esta prueba tiene como finalidad testear la funcion que invierte los signos de una matriz definida por tuplas de numeros complejos.
+
+testescalarmatriz =  Esta prueba tiene como finalidad testear la funcion que multiplica una matriz definida por tuplas de numeros complejos por un numero escalar cualquiera.
+
+testtranspuesta = 
+
+testconjugadomatriz = Esta prueba tiene como finalidad testear la funcion que invierte los signos de la parte imaginaria de la tuplas de numeros complejos que definen la matriz.
+
+
+
+
+
 
 
 ## Construido con :
