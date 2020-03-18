@@ -5,10 +5,8 @@ def probabilidad(vector,i):
     b = libreria1.norma(vector)
     b = b**2
     respuesta = a/b
+    respuesta = round(respuesta,2)
     return respuesta
-def main():
-    i = 2
-    vector = [(-3,-1),(0,-2),(0,1),(2,0)]
-    respuesta = probabilidad(vector,i)
-    print(respuesta)
-main()
+def transito():
+    r = libreria1.interno(vector,vector1)
+    return r
