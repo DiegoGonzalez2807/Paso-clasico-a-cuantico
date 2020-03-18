@@ -1,5 +1,17 @@
 from matplotlib import pyplot
-import lib
+import math
+import libreria1
+def experimento_canica(matriz,vector,cantidad):
+    click = 0
+    if len(matriz) == len(vector):
+        guardar = vector
+        while click != cantidad:
+            guardar = libreria1.accionmatvector(matriz,guardar)
+            click = click + 1
+        return guardar
+    else:
+        print('Longitudes inexactas para hacer la accion')
+        return None
 def potencia (a,b):
     matriz = a
     for i in range (1,b):
@@ -21,5 +33,5 @@ def probabilidad (vector):
         x=x+[i]
     pyplot.title("PROBABILIDAD")
     pyplot.bar(x,height=y)
-    pyplot.savefig("experimento.png")
+    pyplot.savefig("probabilidad.png")
     pyplot.show()
