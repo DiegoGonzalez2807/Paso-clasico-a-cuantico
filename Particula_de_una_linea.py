@@ -1,8 +1,8 @@
-import lib
+import libreria1
 def probabilidad(vector,i):
-    a = lib.modulos(vector[i])
+    a = libreria1.modulos(vector[i])
     a = a**2
-    b = lib.norma(vector)
+    b = libreria1.norma(vector)
     b = b**2
     respuesta = a/b
     return respuesta
