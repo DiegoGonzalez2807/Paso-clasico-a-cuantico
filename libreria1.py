@@ -114,18 +114,20 @@ def adjunmatrices(a):
     c = transpuesta(conjumatrices(a))
     return c
 def accionmatvector(a,b):
-    n,m = len(a), len(a[0])
+    m,n = len(a), len(a[0])
     prob1 = len(b)
     arreglo = []
-    if prob1 == m:
+    if n == prob1:
         matinicial = (0,0)
-        for i in range(n):
-            for j in range(m):
+        for i in range(m):
+            for j in range(len(a[i])):
                 resultado = multi(a[i][j],b[j])
-                Sum1 = suma(matinicial,resultado)
-            arreglo = arreglo + [Sum1]
-            Sum1 = (0,0)
-    return arreglo
+                matinicial = suma(resultado,matinicial)
+            arreglo = arreglo + [matinicial]
+            matinicial = (0,0)
+        return arreglo
+    else:
+        print('No se puede')
 
 def multimatriz(a,b):
     n,m = len(a),len(a[0])
@@ -216,56 +218,3 @@ def tensor(a,b):
         posj = posj - 1
         arreglo.append(fila)
     return arreglo
-def prettyprinting(a):
-    print(a[0], "+", a[1], "i")
-def main():
-    vector1 = [(1,0),(2,3)]
-    vector2 = [(3,4),(4,6)]
-    matriz1 =  [(1,0),(2,3)], [(3,4),(4,6)],
-    matriz2 = [(2,1),(3,5)], [(3,7),(4,8)],
-    num1 = (3,0)
-    num2 = (3.7,8.5)
-    num3 = (2,0)
-    sumar = suma(num2,num1)
-    restar = resta(num2,num1)
-    multiplicacion = multi(num2,num1)
-    dividir = division(num2,num1)
-    conjugar = conjugado(num2)
-    modulo = modulos(num2)
-    cambiocoordenadas = cartesiapolar(num2)
-    retornar = retorno(num2)
-    prettyprinting(sumar)
-    prettyprinting(restar )
-    prettyprinting(multiplicacion)
-    prettyprinting(dividir)
-    prettyprinting(conjugar)
-    prettyprinting(modulo)
-    prettyprinting(cambiocoordenadas)
-    prettyprinting(retornar)
-    sumar1 = sumavector(vector2,vector1)
-    print(sumar1)
-    multi2 = multiescalar(vector1,num3)
-    sumar2 = sumaMatriz(matriz1,matriz2)
-    invertir1 = inversaMatriz(matriz1)
-    escalar1 = escalarmatrices(matriz1,num3)
-    transponer1 = transpuesta(matriz1)
-    print(transponer1)
-    conjugar1 = conjumatrices(matriz1)
-    print(conjugar1)
-    adjuntar1 = adjunmatrices(matriz1)
-    print(adjuntar1)
-    multiplicar1 = multimatriz(matriz1,matriz2)
-    print(multiplicar1)
-    accion1 = accionmatvector(matriz1, vector1)
-    print(accion1)
-    prodpunto1 = interno(vector1, vector2)
-    print(prodpunto1)
-    norma1 = norma(vector1)
-    print(norma1)
-    distancia1 = distancia(vector1,vector2)
-    print(distancia1)
-    unitaria1= revisionunitaria(matriz1)
-    hermitiana1 = revisionhermitiana(matriz1)
-    productotensor1 = tensor(matriz1,matriz2)
-    print(productotensor1)
-main()
