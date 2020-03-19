@@ -173,6 +173,13 @@ def distancia(d,e):
     respuesta = (h[0] ** (1/2))
     respuesta = round(respuesta,2)
     return respuesta
+def regla (a,b):
+    c = [[(0,0) for j in range (a) ]for i in range (b)]
+    for i in range (b):
+        for j in range (a):
+            if i == j:
+                c[i][j]= ((2/2),0)
+    return c
 def revisionunitaria(a):
     respuesta = False
     b = adjunmatrices(a)
@@ -190,8 +197,7 @@ def revisionhermitiana(a):
     b = adjunmatrices(a)
     if b == a:
         respuesta = True
-        print(respuesta)
-        return respuesta
+        return True
     else:
         respuesta = False
         print(respuesta)
