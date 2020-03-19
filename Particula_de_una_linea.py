@@ -1,4 +1,4 @@
-import libreria1
+from libreria1 import * 
 def probabilidad(vector,i):
     a = libreria1.modulos(vector[i])
     a = a**2
