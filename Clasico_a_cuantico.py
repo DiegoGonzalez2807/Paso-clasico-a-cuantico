@@ -1,4 +1,4 @@
-from matplotlib import pyplot
+
 import math
 import libreria1
 def experimento_canica(matriz,vector,cantidad):
@@ -31,7 +31,3 @@ def probabilidad (vector):
         y=y+[lib.modulos(m[0],m[1])*100]
     for i in range (len(vector)):
         x=x+[i]
-    pyplot.title("PROBABILIDAD")
-    pyplot.bar(x,height=y)
-    pyplot.savefig("probabilidad.png")
-    pyplot.show()
